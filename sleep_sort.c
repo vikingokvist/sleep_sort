@@ -33,7 +33,7 @@ void    *sleep_sort(void *param)
 
     node = (t_list *)param;
     pthread_barrier_wait(&barrier);
-    sleep(node->index);
+	usleep(node->index * 10000);
     lnkdlst_append(node);
     return (NULL);
 }

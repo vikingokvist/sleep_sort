@@ -88,8 +88,8 @@ void	lnkdlst_print(t_list **list)
 	temp = *list;
 	while (temp)
 	{
-		printf("%d\n", temp->value);
+		printf("%d -> ", temp->value);
 		temp = temp->next;
 	}
-	// printf("NULL\n");
+	printf("NULL\n");
 }

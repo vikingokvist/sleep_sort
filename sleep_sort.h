@@ -21,9 +21,8 @@ typedef struct s_list
 
 
 int main(int argc, char **argv);
-void    *sleep_sort(void *param);
-int init_threads(t_list **list);
-void lnkdlst_append(t_list *list);
+void    *sleep_sort_routine(void *param);
+t_list  **sleep_sort(t_list **list);
 t_list	*lnkdlstnew(int value);
 void	lnkdlstadd_back(t_list **list, t_list *newl);
 void	lnkdlst_index(t_list **list);

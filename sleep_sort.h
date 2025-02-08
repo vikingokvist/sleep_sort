@@ -19,10 +19,9 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-
 int main(int argc, char **argv);
 void    *sleep_sort_routine(void *param);
-t_list  **sleep_sort(t_list **list);
+t_list  **sleep_sort(t_list **list, unsigned int list_len);
 t_list	*lnkdlstnew(int value);
 void	lnkdlstadd_back(t_list **list, t_list *newl);
 void	lnkdlst_index(t_list **list);

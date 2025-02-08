@@ -29,13 +29,14 @@ void    *sleep_sort_routine(void *param)
     return (NULL);
 }
 
-t_list **sleep_sort(t_list **list)
+t_list **sleep_sort(t_list **list, unsigned int list_len)
 {
-    int         list_len = lnkdlst_len(list);
     pthread_t   threads[list_len];
     t_list      *cur = *list;
-    int         i = 0;
+    unsigned int i = 0;
 
+    if (!list || !list_len)
+        return (NULL);
     pthread_barrier_init(&barrier, NULL, list_len);
     pthread_mutex_init(&append_lock, NULL);
     while (cur)
@@ -56,28 +57,3 @@ t_list **sleep_sort(t_list **list)
     pthread_mutex_destroy(&append_lock);
     return (sorted_list);
 }
-
-int main(int argc, char **argv)
-{
-    t_list **list =  malloc(sizeof(t_list *)); if (!list) return (1); *list = NULL;
-    t_list **sorted_list = NULL;
-    t_list *new_node = NULL;
-
-    if (argc < 2)
-        return (printf(ERR_ARGS), 1);
-    for (int i = 1; i < argc; i++)
-	{
-		new_node = lnkdlstnew(atol(argv[i]));
-		lnkdlstadd_back(list, new_node);
-	}
-    lnkdlst_index(list);
-    lnkdlst_print(list);
-    sorted_list = sleep_sort(list);
-    if (!sorted_list)
-        return (lnkdlst_free(list), 1);
-    lnkdlst_free(list);
-    lnkdlst_print(sorted_list);
-    lnkdlst_free(sorted_list);
-    return (0);
-}
-

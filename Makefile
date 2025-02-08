@@ -4,7 +4,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 
-SRCS = ./sleep_sort.c ./utils.c
+SRCS = ./sleep_sort.c ./utils.c ./main.c
 
 OBJS = $(SRCS:.c=.o)
 

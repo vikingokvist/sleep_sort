@@ -37,6 +37,7 @@ t_list **sleep_sort(t_list **list, unsigned int list_len)
 
     if (!list || !list_len)
         return (NULL);
+    lnkdlst_index(list);
     pthread_barrier_init(&barrier, NULL, list_len);
     pthread_mutex_init(&append_lock, NULL);
     while (cur)

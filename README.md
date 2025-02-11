@@ -17,30 +17,31 @@ Sleep Sort is a unique sorting algorithm that sorts a linked list using threads 
 
 ### Functions  
 `t_list **sleep_sort(t_list **list, unsigned int list_len)`  
-##### - Sorts a linked list using Sleep Sort.  
-##### - Returns a new sorted linked list.  
-##### - Requires the original list to be freed manually.  
+- Sorts a linked list using Sleep Sort.  
+- Returns a new sorted linked list.  
+- Requires the original list to be freed manually.
+
 `void *sleep_sort_routine(void *param)`  
-##### - Sleeps based on index value.  
-##### - Appends the node value to a global linked list after waking.  
+- Sleeps based on index value.  
+- Appends the node value to a global linked list after waking.  
 
 `void lnkdlst_index(t_list **list)`  
-##### - Assigns an index to each node based on its relative position.  
+- Assigns an index to each node based on its relative position.  
 
 `void lnkdlstadd_back(t_list **list, t_list *newl)`  
-##### - Appends a node to the end of a linked list.  
+- Appends a node to the end of a linked list.  
 
 `t_list *lnkdlstnew(int value)`  
-##### - Creates a new linked list node.  
+- Creates a new linked list node.  
 
 `void lnkdlst_free(t_list **list)`  
-##### - Frees the memory allocated for a linked list.  
+- Frees the memory allocated for a linked list.  
 
 `size_t lnkdlst_len(t_list **list)`  
-##### - Returns the length of a linked list.  
+- Returns the length of a linked list.  
 
 `void lnkdlst_print(t_list **list)`  
-##### - Prints a linked list for debugging.  
+- Prints a linked list for debugging.  
 
 ### Notes  
 - Uses pthread_barrier_t to synchronize thread execution before sleeping.  
